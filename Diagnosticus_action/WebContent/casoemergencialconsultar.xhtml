@@ -46,14 +46,7 @@
 						<p class="contact">
 							<label for="raca">Paciente:</label>
 						</p>
-						<h:selectOneMenu id="paciente" styleClass="select-style raca"
-							value="#{tratadorCasoEmergencial.casoEmergencial.paciente.idPaciente}"
-							name="raca" disabled="true">
-							<f:selectItem itemValue="#{null}" itemLabel="Selecione" />
-							<f:selectItems value="#{tratadorPaciente.listar()}"
-								var="tratador" itemLabel="#{tratador.nome}"
-								itemValue="#{tratador.idPaciente}" />
-						</h:selectOneMenu>
+						<h:outputText value="#{tratadorCasoEmergencial.casoEmergencial.paciente.nome}"/>
 						<br />
 						<br />
 
