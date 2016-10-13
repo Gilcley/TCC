@@ -17,7 +17,7 @@ public class CidConverter implements Converter {
         if(value != null && value.trim().length() > 0) {
             try {
             	CadastroCID dao = DAOFactory.criarCidDAO();
-            	CID cid = dao.carregar(Integer.parseInt(value));
+            	CID cid = dao.carregar(value);
                 return cid;
             } catch(NumberFormatException e) {
                 throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Conversion Error", "Not a valid theme."));

@@ -107,6 +107,12 @@
     			 <h:commandLink actionListener="#{tratadorCasoEmergencial.removerExame(exame)}" value="Remover"/>
   				 </h:column>
 			</h:dataTable><br /> <br />
+			
+			<p class="contact"><label for="raca">Diagnóstico:</label></p> 
+		  	<p:autoComplete id="themePojo" value="#{tratadorCasoEmergencial.casoEmergencial.cid}" completeMethod="#{tratadorCasoEmergencial.autoCompleteCID}" 
+               var="cid" itemLabel="#{cid.descricaoAbreviada}" itemValue="#{cid}"  converter="cidConverter" forceSelection="true" >
+            </p:autoComplete><br/>
+			
 			<h:commandButton value="Alterar"
 				action="#{tratadorCasoEmergencial.alterarCasoEmergencial()}" class="buttom" update="growl"/>
 				

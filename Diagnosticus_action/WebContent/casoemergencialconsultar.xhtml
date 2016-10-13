@@ -44,23 +44,16 @@
 						test="${tratadorCasoEmergencial.casoEmergencial.idCasoEmergencial > 0}">
 
 						<p class="contact">
-							<label for="raca">Paciente:</label>
+							<label>Paciente:</label>
 						</p>
 						<h:outputText value="#{tratadorCasoEmergencial.casoEmergencial.paciente.nome}"/>
 						<br />
 						<br />
 
 						<p class="contact">
-							<label for="raca">Queixa Principal:</label>
+							<label>Queixa Principal:</label>
 						</p>
-						<h:selectOneMenu id="queixa" styleClass="select-style raca"
-							value="#{tratadorCasoEmergencial.casoEmergencial.queixaPrincipal.idQueixa}"
-							name="raca" disabled="true">
-							<f:selectItem itemValue="#{null}" itemLabel="Selecione" />
-							<f:selectItems value="#{tratadorQueixa.listar()}" var="tratador"
-								itemLabel="#{tratador.descricaoQueixa}"
-								itemValue="#{tratador.idQueixa}" />
-						</h:selectOneMenu>
+						<h:outputText value="#{tratadorCasoEmergencial.casoEmergencial.queixaPrincipal.descricaoQueixa}"/>
 						<br />
 						<br />
 
@@ -107,11 +100,16 @@
 							rowClasses="employeeTableOddRow,employeeTableEvenRow">
 							<h:column>
 								<f:facet name="header">Exames selecionados:</f:facet>    				
-    			 #{exame.nomeExame}
-  				 </h:column>
+			    			 #{exame.nomeExame}
+			  				 </h:column>
 						</h:dataTable>
 						<br />
 						<br />
+						
+						<p class="contact">
+							<label>Diagnóstico baseado no CID 10:</label>
+						</p>
+						<h:outputText value="#{tratadorCasoEmergencial.casoEmergencial.cid.descricaoAbreviada}"/>
 					</c:if>
 				</h:form>
 			</div>

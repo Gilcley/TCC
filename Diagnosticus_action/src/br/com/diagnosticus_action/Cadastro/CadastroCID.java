@@ -30,7 +30,7 @@ public class CadastroCID {
 		this.session.delete(cid);
 	}
 
-	public CID carregar(Integer codigo) {
+	public CID carregar(String codigo) {
 		return (CID) this.session.get(CID.class, codigo);
 	}
 

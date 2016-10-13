@@ -133,6 +133,7 @@ public class TratadorDeCasoEmergencial {
 
 			novocaso.setDadosExameFisico(casoemergencial.getDadosExameFisico());
 			novocaso.setDescricaoCaso(casoemergencial.getDescricaoCaso());
+			novocaso.setCid(casoemergencial.getCid());
 			novocaso.setPaciente(cadastropaciente.carregar(casoemergencial
 					.getPaciente().getIdPaciente()));
 
