@@ -4,13 +4,13 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.mail.MessagingException;
 
 import org.apache.commons.mail.EmailException;
 
-import com.sun.istack.internal.logging.Logger;
-
 import br.com.diagnosticus_action.Cadastro.CadastroUsuario;
-import br.com.diagnosticus_action.dominio.*;
+import br.com.diagnosticus_action.dominio.Mensagem;
+import br.com.diagnosticus_action.dominio.Usuario;
 import br.com.diagnosticus_action.util.DAOFactory;
 import br.com.diagnosticus_action.util.EmailUtils;
 
@@ -29,7 +29,7 @@ public class TratadorDeEmail {
 		this.mensagem = mensagem;
 	}
 
-	public String enviaEmail() {
+	public String enviaEmail() throws MessagingException {
 		FacesContext context = FacesContext.getCurrentInstance();
 		FacesMessage facesMessage = null;
 		cadastro = new DAOFactory().criarUsuarioDAO();

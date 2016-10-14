@@ -28,7 +28,8 @@ public class ConexaoHibernateFilter implements Filter {
 	private String page = "loginEntrar.xhtml";
 	private String paginaLogin = "/Diagnosticus_action/faces/loginEntrar.xhtml";
 	private String paginaPrimeiroAcesso = "/Diagnosticus_action/faces/loginPrimeiroAcesso.xhtml";
-
+	private String paginaRecuperarSenha = "/Diagnosticus_action/faces/loginRecuperarSenha.xhtml";
+	
 	private SessionFactory sf;
 
 	@Override
@@ -70,7 +71,7 @@ public class ConexaoHibernateFilter implements Filter {
 		Object login = session.getAttribute("UsuarioAtual");
 		RequestDispatcher dispatcher = null;
 
-		if(!(request.getRequestURI().equals(paginaLogin)||request.getRequestURI().equals(paginaPrimeiroAcesso))){
+		if(!(request.getRequestURI().equals(paginaLogin)||request.getRequestURI().equals(paginaPrimeiroAcesso) || request.getRequestURI().equals(paginaRecuperarSenha))){
 			if (login == null) {
 				// então envia para a pagina de acesso invalido
 				dispatcher = servletRequest
