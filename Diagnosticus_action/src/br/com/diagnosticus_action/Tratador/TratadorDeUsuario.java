@@ -182,7 +182,7 @@ public class TratadorDeUsuario {
 				break;
 			}
 		}
-		return "jogoInicio.xhtml?faces-redirect=true";
+		return "diagnosticus_index.xhtml?faces-redirect=true";
 	}
 
 	public String alterarUsuario() {

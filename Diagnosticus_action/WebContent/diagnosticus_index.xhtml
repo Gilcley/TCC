@@ -4,20 +4,23 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"> 
 
 <h:head>
-
+	
 </h:head>                        
 <body> 
  	<ui:composition template="/template/diagnosticus.xhtml">
  		<ui:define name="game">
 			<div id ="enf"><img src="images/enfa.png"/></div>
 			<div id = "dialogo">
-				<div id="texto"> <h2>Bem vindo(a) Dr(a). Jess</h2> 
+				<div id="texto" > <h2>Bem vindo(a) Dr(a). #{tratadorUsuario.usuario.nome}</h2> 
 								<br/> Voce tem um novo caso para solucionar!
 				</div><img src="images/dialogo.png"/></div>
 		</ui:define>
 		<ui:define name="botton-game">
-			<div class= "bt_iniciar_jogo"><a>Iniciar</a></div>
+			<h:form id="formPrincipal" >
+				<div class= "bt_iniciar_jogo"><h:commandLink style="text-decoration: none; color: white;" value="Iniciar" action="#{tratadorJogo.iniciarJogo()}"/></div>
+			</h:form>
 		</ui:define>
+		
 	</ui:composition>
 </body> 
 </html>

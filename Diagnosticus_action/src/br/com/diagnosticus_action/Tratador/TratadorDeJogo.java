@@ -97,6 +97,17 @@ public class TratadorDeJogo {
 		this.cadastroImagemExame = DAOFactory.criarImagemExameDAO();
 	}
 
+	public String iniciarJogo(){
+		starSession();
+		
+		simulacao = (Simulacao) FacesContext.getCurrentInstance().getExternalContext().getApplicationMap().get("simulacao");
+		
+		caso = Cadastrocaso.carregar(simulacao.getIdCasoEmergencial().getIdCasoEmergencial());
+		
+		return "diagnosticus_acoes_queixas.xhtml?faces-redirect=true";
+	}
+	
+	
 	public String CarregarExame() {
 		starSession();
 		caso = new CasoEmergencial();
