@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+
+</h:head>                        
+<body> 
+ 	<ui:composition template="/template/diagnosticus_acoes.xhtml">
+ 		<ui:define name="game">
+			<div id ="titulo_tela">Exame  Solicitado</div>
+				<div id="exame_complementar">
+					<div class="exam">>>Exame: </div>  
+					<div class="nome_exam"> Raio X</div>  
+				</div>
+				 <div id= "confirmarExame">
+					<div id="solicitar">Solicitar</div>
+					<div id="voltar">Voltar</div>
+				</div>			
+		</ui:define>
+	</ui:composition>
+</body> 
+</html>
