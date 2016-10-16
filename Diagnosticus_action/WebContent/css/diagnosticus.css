@@ -283,12 +283,65 @@ height: 600px;
 #bt_game1,#bt_game2, #bt_game3,#bt_game4,#bt_game5,#bt_game6 {
 	float: left;
 	margin-left: 74px;
+	width: 67px;
+	height: 67px;
 	text-align: center;
 }
 
 #bt_game1{
-	margin-left: 150px;	
+	margin-left: 112px;	
 }
+
+
+#bt_game1 	{
+	background-image: url("../images/btn1_n.png");
+}
+
+#bt_game2 	{
+	background-image: url("../images/btn2_n.png");
+}
+
+#bt_game3 	{
+	background-image: url("../images/btn3_n.png");
+}
+
+#bt_game4 	{
+	background-image: url("../images/btn4_n.png");
+}
+
+
+#bt_game5 	{
+	background-image: url("../images/btn5_n.png");
+}
+
+#bt_game6 	{
+	background-image: url("../images/btn6_n.png");
+}
+
+#bt_game1:hover{
+	background-image: url("../images/btn1_h.png");
+}
+
+#bt_game2:hover{
+	background-image: url("../images/btn2_h.png");
+}
+
+#bt_game3:hover{
+	background-image: url("../images/btn3_h.png");
+}
+
+#bt_game4:hover{
+	background-image: url("../images/btn4_h.png");
+}
+
+#bt_game5:hover{
+	background-image: url("../images/btn5_h.png");
+}
+
+#bt_game6:hover{
+	background-image: url("../images/btn6_h.png");
+}
+
 
 #titulo_tela{
 	text-align:center;
