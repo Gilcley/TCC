@@ -358,3 +358,48 @@ height: 600px;
 	color: #4D4D4D;
 	font-weight: bold;
 }
+
+#ajuda{
+	width: 650px;
+	height: 53px;
+	background-image: url("../images/ajudaExame.png");
+	margin-left: 138px;
+	margin-top: 30px;
+}
+
+#lista_exames{
+width: 966px;
+height: 221px;
+margin-top: 11px;
+margin-left: 34px;
+margin-bottom: 11px;
+
+}
+
+#nav2 ul li a:link, a:visited {
+	text-decoration:none;
+	color: #f7f7f7;
+}
+#nav2 li {
+	margin: 12px;
+	float: left;
+	margin-right: 34px;
+	height: 35px;
+	text-align: center;
+	margin-right: 43px;
+	 background: #29A8E6;
+	 background-image: -webkit-linear-gradient(top, #29A8E6, #2980b9);
+	 background-image: -moz-linear-gradient(top, #29A8E6, #2980b9);
+	 background-image: -ms-linear-gradient(top, #29A8E6, #2980b9);
+	 background-image: -o-linear-gradient(top, #29A8E6, #2980b9);
+	 background-image: linear-gradient(to bottom, #29A8E6, #2980b9);
+	font-family: Arial;
+	color: #f7f7f7;
+	font-size: 20px;
+	padding: 10px 20px 10px 20px;
+}
+
+
+
+
+
