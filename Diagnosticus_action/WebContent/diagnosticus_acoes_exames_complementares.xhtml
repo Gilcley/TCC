@@ -12,13 +12,17 @@
 			<div id ="titulo_tela">Exame  Solicitado</div>
 				<div id="exame_complementar">
 					<div class="exam">>>Exame: </div>  
-					<div class="nome_exam"> Raio X</div>  
+					<div class="nome_exam"> 
+						<h:outputText value="#{tratadorJogo.exame.nomeExame}"/>
+					</div>  
 				</div>
 				 <div id= "confirmarExame">
-					<div id="solicitar">Solicitar</div>
-					<div id="voltar">Voltar</div>
+				 	<h:form>
+						<div id="solicitar"><h:commandLink value="Solicitar"  action="#{tratadorJogo.AdicionarListaExamesSolicitados}" style="text-decoration: none; color: white;"/></div>
+						<div id="voltar"><h:commandLink value="Voltar" action="#{tratadorJogo.telaExames()}"  style="text-decoration: none; color: white;"/> </div>
+					</h:form>				
 				</div>			
 		</ui:define>
 	</ui:composition>
 </body> 
-</html>
+</html>	

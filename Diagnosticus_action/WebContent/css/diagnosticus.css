@@ -294,7 +294,7 @@ height: 600px;
 
 
 #bt_game1 	{
-	background-image: url("../images/btn1_n.png");
+	background-image: url("../images/btn3_n.png");
 }
 
 #bt_game2 	{
@@ -302,7 +302,7 @@ height: 600px;
 }
 
 #bt_game3 	{
-	background-image: url("../images/btn3_n.png");
+	background-image: url("../images/btn1_n.png");
 }
 
 #bt_game4 	{
@@ -319,7 +319,7 @@ height: 600px;
 }
 
 #bt_game1:hover{
-	background-image: url("../images/btn1_h.png");
+	background-image: url("../images/btn3_h.png");
 }
 
 #bt_game2:hover{
@@ -327,7 +327,7 @@ height: 600px;
 }
 
 #bt_game3:hover{
-	background-image: url("../images/btn3_h.png");
+	background-image: url("../images/btn1_h.png");
 }
 
 #bt_game4:hover{
@@ -402,6 +402,20 @@ margin-bottom: 11px;
 
 #confirmarExame{
 	margin-left: 350px;
+}
+
+confirmarDiagnostico{
+	margin-left: 350px;
+}
+
+#diagnostico{
+	margin-top: 55px;
+	width: 790px;
+	height: 163px;
+	margin-top: 11px;
+	margin-left: 72px;
+	margin-bottom: 11px;
+	border: 1px dashed red;
 }
 
 #solicitar,#voltar{  

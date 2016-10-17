@@ -23,9 +23,11 @@ public class Diagnostico {
 	@Column(name = "tratamento")
 	private String Tratamento;
 
-	@Column(name = "descricaodiagnostico")
-	private String DescricaoDiagnostico;
-
+	@ManyToOne
+	@JoinColumn(name = "codigo_cid")
+	private CID cid;
+	
+	
 	public Diagnostico() {
 
 	}
@@ -46,12 +48,12 @@ public class Diagnostico {
 		Tratamento = tratamento;
 	}
 
-	public String getDescricaoDiagnostico() {
-		return DescricaoDiagnostico;
+	public CID getCid() {
+		return cid;
 	}
 
-	public void setDescricaoDiagnostico(String descricaoDiagnostico) {
-		DescricaoDiagnostico = descricaoDiagnostico;
+	public void setCid(CID cid) {
+		this.cid = cid;
 	}
 
 }

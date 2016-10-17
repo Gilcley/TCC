@@ -10,8 +10,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="../css/diagnosticus.css" />
 		<!-- <link rel="stylesheet" type="text/css"  href="../css/diagnosticus.css"/> -->
-
+	
 </h:head>
+
 <h:body >
 	 	<div id="page-wrapper">
 			<!-- Header -->
@@ -34,7 +35,7 @@
 
 						<div class="caixaDireita">        
 
-						<div id ="jogador">nome do jogador</div>
+						<div id ="jogador">#{tratadorUsuario.usuario.nome}</div>
 						<div id="notificacao"></div>
 						</div>					
 						</div>
@@ -44,8 +45,9 @@
 				<section class="wrapper">
 					<div class="container">
 						<div class="container_jogo">
+							<p:growl id="growl"  sticky="true" />
 							<div id="top-game">	
-								<div id= "tempo">tempoFake: 14:23
+								<div id= "tempo">Tempo Restante: <h:outputText value="#{tratadorUsuario.simulacao.tempoNecessarioFormatado}"/> 
 								</div>
 								<div id= "vida">
 									<div id ="tempoVida">
@@ -66,12 +68,12 @@
 							</div>
 						</div>
 						<div id="botton-game">
-							<a href="diagnosticus_acoes_dadospaciente.xhtml#titulo_tela"><div id="bt_game1"></div></a>
-							<a href="diagnosticus_acoes_dadospaciente.xhtml#titulo_tela"><div id="bt_game2"/></a>
-							<a href="diagnosticus_acoes_dadospaciente.xhtml#titulo_tela"><div id="bt_game3"></div></a>
-							<a href="diagnosticus_acoes_dadospaciente.xhtml#titulo_tela"><div id="bt_game4"></div></a>
-							<a href="diagnosticus_acoes_dadospaciente.xhtml#titulo_tela"><div id="bt_game5"></div></a>
-							<a href="diagnosticus_acoes_dadospaciente.xhtml#titulo_tela"><div id="bt_game6"></div></a>	
+							<a href="diagnosticus_acoes_dadospaciente.xhtml#tempo"><div id="bt_game1"></div></a>
+							<a href="diagnosticus_acoes_dadospaciente.xhtml#tempo"><div id="bt_game2"/></a>
+							<a href="diagnosticus_acoes_queixas.xhtml#tempo"><div id="bt_game3"></div></a>
+							<a href="diagnosticus_acoes_exames.xhtml#tempo"><div id="bt_game4"></div></a>
+							<a href="diagnosticus_acoes_dadospaciente.xhtml#tempo"><div id="bt_game5"></div></a>
+							<a href="diagnosticus_acoes_diagnostico.xhtml#tempo"><div id="bt_game6"></div></a>	
 						</div>		
 					</div>
 				</section>
@@ -84,4 +86,5 @@
 				</div>
 		</div>	 	 
 </h:body>
+
 </html>

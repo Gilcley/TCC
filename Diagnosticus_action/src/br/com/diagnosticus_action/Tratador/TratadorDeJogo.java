@@ -45,22 +45,33 @@ import br.com.diagnosticus_action.util.DAOFactory;
 public class TratadorDeJogo {
 	private Simulacao simulacao = new Simulacao();
 
-	private int tipousuario ;
-	private Exame exame = new Exame();
-	private CadastroExame cadastroExame = new CadastroExame();
-	private Paciente paciente = new Paciente();
-	private CasoEmergencial caso = new CasoEmergencial();
-	private Diagnostico diagnostico = new Diagnostico();
-	private CondutaMedica condutaMedica = new CondutaMedica();
 	private Jogo jogo = new Jogo();
+
+	private CasoEmergencial caso = new CasoEmergencial();
+	
+	private Exame exame = new Exame();
+	
+	private Paciente paciente = new Paciente();
+	
+	private Diagnostico diagnostico = new Diagnostico();
+
 	private ImagemExames imagemexames = new ImagemExames(); 
+
+	private CondutaMedica condutaMedica = new CondutaMedica();
+	
+	private CadastroExame cadastroExame = new CadastroExame();
 	
 	private List<Exame> listaExamesSolicitados = new ArrayList<>();
+	
 	private List<Exame> listaExamesSolicitadosValidos = new ArrayList<>();
+	
 	private List<Exame> listaExamesVisualizacaoDisponivel = new ArrayList<>();
+
 	private List<Queixa> listaQueixasPaciente = new ArrayList<>();
+	
 	private StreamedContent image;
 	
+	private int tipousuario ;
 	
 	
 	/*Variaveis  relacionadas a logica do tempo 
@@ -105,6 +116,23 @@ public class TratadorDeJogo {
 		caso = Cadastrocaso.carregar(simulacao.getIdCasoEmergencial().getIdCasoEmergencial());
 		
 		return "diagnosticus_acoes_queixas.xhtml?faces-redirect=true";
+	}
+	
+	/**
+	 * carrega as informações de um exame selecionado  e redireciona para a tela de confirmação de solicitação.
+	 * */
+	public String preSelecionarExame(){
+		for (Exame exameAux : listaExamesSolicitados) {
+			if(exameAux.getIdExame()==exame.getIdExame()){
+				mensagem("Esse exame já foi solicitado. Por Favor Aguarde!", 1);
+				return null;
+			}
+		}
+		
+		this.cadastroExame = DAOFactory.criarExameDAO();
+		exame = cadastroExame.carregar(exame.getIdExame());
+		
+		return "diagnosticus_acoes_exames_complementares.xhtml";
 	}
 	
 	
@@ -168,7 +196,7 @@ public class TratadorDeJogo {
 				jogo.setCondutaMedica(condutaMedica);
 			}
 			
-			if(diagnostico.getDescricaoDiagnostico()!= null || diagnostico.getTratamento()!= null){
+			if( diagnostico.getTratamento()!= null){
 				cadastroDiagnostico.salvar(diagnostico);
 				jogo.setDiagnostico(diagnostico);
 			}
@@ -228,12 +256,7 @@ public class TratadorDeJogo {
 
 	public String AdicionarListaExamesSolicitados(){
 		starSession();
-		for (Exame exameAux : listaExamesSolicitados) {
-			if(exameAux.getIdExame()==exame.getIdExame()){
-				mensagem("Esse exame já foi solicitado. Por Favor Aguarde!", 1);
-				return null;
-			}
-		}
+
 		Exame exm = cadastroExame.carregar(exame.getIdExame());
 		listaExamesSolicitados.add(exm);
 		caso = Cadastrocaso.carregar(caso.getIdCasoEmergencial());
@@ -364,6 +387,10 @@ public class TratadorDeJogo {
 		image = null;
 		  InputStream is = new ByteArrayInputStream(imagemexames.getImagem());
 		   image = new DefaultStreamedContent(is, imagemexames.getTipoImagem());
+	}
+	
+	public String telaExames(){
+		return "diagnosticus_acoes_exames.xhtml";
 	}
 
 	public int getTipousuario() {

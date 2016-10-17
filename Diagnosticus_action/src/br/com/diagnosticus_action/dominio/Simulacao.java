@@ -147,10 +147,7 @@ public class Simulacao {
 	}
 	
 	public String getTempoNecessarioFormatado(){
-		Date data= TempoNecessario; 
-		SimpleDateFormat formatador= new SimpleDateFormat("HH:mm");  
-		String dataFormatada = formatador.format(data);
-		return dataFormatada;
+		return (new SimpleDateFormat("HH:mm").format(TempoNecessario));
 	}
 	
 }
